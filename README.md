@@ -1,6 +1,6 @@
 # kolapay. 
 This is a woocommerce payment plugin with local mobile payment options enabled.
-The plugin was built specifically for mobile payments in Ghana.
+The plugin is built specifically for the mobile payment options in Ghana.
 This plugin can however be updated to suite any local mobile money payment.
 
 # Requirements
