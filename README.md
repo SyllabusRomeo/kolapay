@@ -1,11 +1,11 @@
-# kolapay. 
+# kolapay
 This is a woocommerce payment plugin with local mobile payment options enabled.
 The plugin is built specifically for the mobile payment options in Ghana.
 This plugin can however be updated to suite any local mobile money payment.
 
 # Requirements
 1. Install Woocommerce plugin for your ecommerce store.
-2. Add this line of code to the abstract-wc-order.php file in woocommerce/includes/abstracts folder.
+2. Add this line of code to the **abstract-wc-order.php** file in ***woocommerce/includes/abstracts*** folder.
    This code snippet gets the meta data from the checkout form to your local API
    ```ruby
 	/**
@@ -20,7 +20,7 @@ This plugin can however be updated to suite any local mobile money payment.
 	```
 3. Upload kolapy-plugin
 
-4. Code to allow reroute to login/register page before checkout
+4. Code to allow reroute to **login/register** page before checkout
   ```ruby
   /**
    * Redirect to Login/Registration Page from Checkout if customer is not logged in.
