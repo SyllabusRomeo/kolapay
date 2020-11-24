@@ -43,3 +43,23 @@ This plugin can however be updated to suite any local mobile money payment.
     	return $fields;
      
     }
+
+Code to allow reroute to login/register page before checkout
+/**
+ * Redirect to Login/Registration Page from Checkout if customer is not logged in.
+ * */
+add_action('template_redirect','check_if_logged_in');
+
+function check_if_logged_in(){
+    $pageid = 301; // your checkout page id
+    if(!is_user_logged_in() && is_page($pageid))
+    {
+        $url = add_query_arg(
+            'redirect_to',
+            get_permalink($pagid),
+            site_url('/my-account/') // your my acount url
+        );
+        wp_redirect($url);
+        exit;
+    }
+}
