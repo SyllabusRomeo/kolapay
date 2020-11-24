@@ -18,39 +18,12 @@ This plugin can however be updated to suite any local mobile money payment.
 	}
 3. Upload kolapy-plugin
 
-4. Addition field for Mobile Money Network selection
-   
-    /**
-    *Add Momo to billing address
-    *NB: edit the wc-account-functions.php in the woocommerce includes file
-    */
-    add_filter( 'woocommerce_default_address_fields', 'romeo_add_field' )
-    function romeo_add_field( $fields ) {
-
-    	$fields['momo_network']   = array(
-    		'label'        => 'Mobile Money Network',
-    		'required'     => true,
-    		'class'        => array( 'form-row-wide', 'my-custom-class' ),
-    		'priority'     => 20,
-    		'options'=>array(
-    		        ''         => 'Please select mobile money network',
-    		        'mtnmomo'  => 'MTN Momo',
-    		        'airtel'   => 'AirtelTigo Money',
-    		        'vodafone' => 'Voda Cash',
-    		    ),
-    	);
-     
-    	return $fields;
-     
-    }
-
-Code to allow reroute to login/register page before checkout
+4. Code to allow reroute to login/register page before checkout
 /**
  * Redirect to Login/Registration Page from Checkout if customer is not logged in.
  * */
+'''ruby 
 add_action('template_redirect','check_if_logged_in');
-
-
 function check_if_logged_in(){
     $pageid = ...; // your checkout page id
     if(!is_user_logged_in() && is_page($pageid))
@@ -64,3 +37,4 @@ function check_if_logged_in(){
         exit;
     }
 }
+'''
