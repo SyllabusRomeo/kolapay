@@ -7,6 +7,7 @@ This plugin can however be updated to suite any local mobile money payment.
 1. You need to install Woocommerce plugin for your ecommerce store. Without it the pugin would force an error.
 2. Add this line of code to the abstract-wc-order.php file in woocommerce/includes/abstracts folder.
    This code snippet gets the meta data from the checkout form to your local API
+   ```ruby
 	/**
 	 * Get Momo Details for Api.
 	 *
@@ -16,13 +17,15 @@ This plugin can however be updated to suite any local mobile money payment.
  	public function get_momo_data( $request = null) {
 		return $this->get_meta($request);
 	}
+```
 3. Upload kolapy-plugin
 
 4. Code to allow reroute to login/register page before checkout
+```ruby
 /**
  * Redirect to Login/Registration Page from Checkout if customer is not logged in.
  * */
-```ruby
+ 
 add_action('template_redirect','check_if_logged_in');
 function check_if_logged_in(){
     $pageid = ...; // your checkout page id
