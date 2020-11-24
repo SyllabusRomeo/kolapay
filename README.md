@@ -50,8 +50,9 @@ Code to allow reroute to login/register page before checkout
  * */
 add_action('template_redirect','check_if_logged_in');
 
+
 function check_if_logged_in(){
-    $pageid = 301; // your checkout page id
+    $pageid = ...; // your checkout page id
     if(!is_user_logged_in() && is_page($pageid))
     {
         $url = add_query_arg(
