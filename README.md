@@ -4,7 +4,7 @@ The plugin was built specifically for mobile payments in Ghana.
 This plugin can however be updated to suite any local mobile money payment.
 
 # Requirements
-1. You need to install Woocommerce plugin for your ecommerce store. Without it the pugin would force an error.
+1. Install Woocommerce plugin for your ecommerce store.
 2. Add this line of code to the abstract-wc-order.php file in woocommerce/includes/abstracts folder.
    This code snippet gets the meta data from the checkout form to your local API
    ```ruby
@@ -17,27 +17,27 @@ This plugin can however be updated to suite any local mobile money payment.
  	public function get_momo_data( $request = null) {
 		return $this->get_meta($request);
 	}
-```
+	```
 3. Upload kolapy-plugin
 
 4. Code to allow reroute to login/register page before checkout
-```ruby
-/**
- * Redirect to Login/Registration Page from Checkout if customer is not logged in.
- * */
+  ```ruby
+  /**
+   * Redirect to Login/Registration Page from Checkout if customer is not logged in.
+   * */
  
-add_action('template_redirect','check_if_logged_in');
-function check_if_logged_in(){
-    $pageid = ...; // your checkout page id
-    if(!is_user_logged_in() && is_page($pageid))
-    {
-        $url = add_query_arg(
-            'redirect_to',
-            get_permalink($pagid),
-            site_url('/my-account/') // your my acount url
-        );
-        wp_redirect($url);
-        exit;
-    }
-}
-```
+  add_action('template_redirect','check_if_logged_in');
+  function check_if_logged_in(){
+      $pageid = ...; // your checkout page id
+      if(!is_user_logged_in() && is_page($pageid))
+      {
+          $url = add_query_arg(
+              'redirect_to',
+              get_permalink($pagid),
+              site_url('/my-account/') // your my acount url
+          );
+          wp_redirect($url);
+          exit;
+      }
+   }
+  ```
