@@ -1,4 +1,4 @@
-```
+```ruby
 /**
  * Make fields read only.
  * 
