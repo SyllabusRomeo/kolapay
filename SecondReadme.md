@@ -5,9 +5,9 @@
  * */
  /*disable phone editing of billing address from checkout page*/
  add_action('woocommerce_checkout_fields','readonly_billing_email',10,1);
- 
  function readonly_billing_email($checkout_fields){
      $checkout_fields['billing']['billing_email']['custom_attributes'] = array('readonly' => 'readonly');
+     $checkout_fields['billing']['billing_phone']['custom_attributes'] = array('readonly' => 'readonly');
      return $checkout_fields;
  }
  
