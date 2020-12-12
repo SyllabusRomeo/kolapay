@@ -20,7 +20,7 @@ This plugin can however be updated to suite any local mobile money payment.
 	```
 3. Upload kolapy-plugin
 
-4. Code to allow reroute to **login/register** page before checkout Insert this code in the ***functions.php*** file of theme file
+4. Code to allow reroute to **login/register** page before checkout Insert this code in the ***functions.php*** file of theme file.
    Video illusration can be found here: https://www.youtube.com/watch?v=x-39Q04uWP8
   ```ruby
   /**
