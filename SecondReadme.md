@@ -1,3 +1,5 @@
+1. Add this code snippet to your Theme ***function.php*** file
+
 ```ruby
 /**
  * Make fields read only.
